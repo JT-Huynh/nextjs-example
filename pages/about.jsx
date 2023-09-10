@@ -1,5 +1,9 @@
-export default function About(){
+import Layout from "../components/layout";
+
+export default function About() {
   return (
-  <h1>This is the about page</h1>
-  )
-} 
+    <Layout>
+      <h1>This is the about page</h1>
+    </Layout>
+  );
+}
