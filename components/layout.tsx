@@ -7,7 +7,7 @@ import utilStyles from "../styles/utils.module.css";
 const name = "JT-Huynh";
 export const siteTitle = "Next.js Sample Sites";
 
-export default function Layout({ children, home }) {
+export default function Layout(props: { children: any; home?: boolean }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -26,7 +26,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        {home ? (
+        {props.home ? (
           <>
             <Image
               priority
@@ -58,8 +58,8 @@ export default function Layout({ children, home }) {
           </>
         )}
       </header>
-      <main>{children}</main>
-      {!home && (
+      <main>{props.children}</main>
+      {!props.home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Date from "../components/date";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
+import { GetStaticProps } from "next";
 import { getSortedPostsData } from "../utils/post";
 
 export default function Home({ allPostedData }) {
@@ -35,7 +36,7 @@ export default function Home({ allPostedData }) {
   );
 }
 
-export const getStaticProps = () => {
+export const getStaticProps: GetStaticProps = () => {
   const allPostedData = getSortedPostsData();
 
   return { props: { allPostedData } };
